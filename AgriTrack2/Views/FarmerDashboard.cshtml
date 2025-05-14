@@ -1,0 +1,30 @@
+﻿@model List<FarmerData>
+
+<div class="container mt-4">
+    <h2 class="text-center">Farmer Dashboard</h2>
+
+    <!-- Search Form -->
+    <form method="get" class="mb-3">
+        <input type="text" name="searchName" class="form-control" placeholder="Search by name" />
+        <button type="submit" class="btn btn-primary mt-2">Search</button>
+    </form>
+
+    <!-- Farmers Table -->
+    <table class="table table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>Name</th>
+                <th>Farm Location</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var farmer in Model)
+            {
+                <tr>
+                    <td>@farmer.Name</td>
+                    <td>@farmer.FarmLocation</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,21 @@
+﻿@model RegisterViewModel
+
+<h2>Register</h2>
+<form asp-action="Register" method="post">
+    <label>Full Name:</label>
+    <input type="text" asp-for="FullName" required />
+
+    <label>Email:</label>
+    <input type="email" asp-for="Email" required />
+
+    <label>Password:</label>
+    <input type="password" asp-for="Password" required />
+
+    <label>Role:</label>
+    <select asp-for="Role">
+        <option value="Farmer">Farmer</option>
+        <option value="Employee">Employee</option>
+    </select>
+
+    <button type="submit">Register</button>
+</form>

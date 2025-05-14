@@ -1,0 +1,37 @@
+﻿@model AgriTrack2.Models.LoginViewModel
+
+<div class="container mt-4">
+    <h2 class="text-center">Login</h2>
+
+    @if (!ViewData.ModelState.IsValid)
+    {
+        <div class="alert alert-danger">
+            @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+            {
+                <p>@error.ErrorMessage</p>
+            }
+        </div>
+    }
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form asp-action="Login" method="post" class="card p-4 shadow">
+                <div class="mb-3">
+                    <label class="form-label">Email:</label>
+                    <input type="email" asp-for="Email" class="form-control" required />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Password:</label>
+                    <input type="password" asp-for="Password" class="form-control" required />
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100">Login</button>
+            </form>
+
+            <p class="text-center mt-3">
+                Don't have an account? <a asp-action="Register" class="text-decoration-none">Register here</a>
+            </p>
+        </div>
+    </div>
+</div>
